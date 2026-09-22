@@ -20,3 +20,8 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/employees/2/
 Accept: application/json
+
+#api call for deleting employee
+###
+DELETE http://127.0.0.1:8000/employees/1/
+Content-Type: application/json

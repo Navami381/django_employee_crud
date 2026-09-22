@@ -36,8 +36,15 @@ class EmployeeListCreateView(View):
         response_data={"message":"employee are added..."}
         return JsonResponse(response_data)
 
+    
+@method_decorator(csrf_exempt,name="dispatch")
 class EmployeeRetreiveUpdateDeleteView(View):
     def get(self,request,pk=None):
         qs=Employee.objects.filter(id=pk).values()
         employee_detail=list(qs)
         return JsonResponse(employee_detail,safe=False)
+
+    def delete(self,request,pk=None):
+        qs=Employee.objects.get(id=1).delete()
+        response_data={"message":"employee is deleted.."}
+        return JsonResponse(response_data,safe=False)
