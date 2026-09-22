@@ -8,4 +8,7 @@ class Employee(models.Model):
     salary=models.PositiveIntegerField()
     location=models.CharField(max_length=200)
     email=models.EmailField(unique=True)
-    
+
+#then make it as query file and then execute
+#python manage.py makemigrations
+#python manage.py migrate

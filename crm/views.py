@@ -15,7 +15,7 @@ class EmployeeListCreateView(View):
         return JsonResponse(employee_list,safe=False) #convert python-native type to json
 
     def post(self,request):
-        form_data=loads(request.body)
+        form_data=loads(request.body) #json_python_native type 
         """
                 {
             "name":"zayn",
@@ -45,6 +45,6 @@ class EmployeeRetreiveUpdateDeleteView(View):
         return JsonResponse(employee_detail,safe=False)
 
     def delete(self,request,pk=None):
-        qs=Employee.objects.get(id=1).delete()
+        qs=Employee.objects.get(id=2).delete()
         response_data={"message":"employee is deleted.."}
         return JsonResponse(response_data,safe=False)
